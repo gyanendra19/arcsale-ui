@@ -134,7 +134,7 @@ const Home = ({
               recommendations and self-service assistance.
             </p>
             <div className="flex gap-4">
-              <button onClick={() => setIsModalOpen} className="px-6 py-3 font-medium rounded-full bg-gradient-to-bl from-red-200 via-white to-blue-200 text-black cursor-pointer transition-colors">
+              <button onClick={() => setIsModalOpen(true)} className="px-6 py-3 font-medium rounded-full bg-gradient-to-bl from-red-200 via-white to-blue-200 text-black cursor-pointer transition-colors">
                 View Demo
               </button>
               <button className="px-6 py-3 cursor-pointer font-medium rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors">
