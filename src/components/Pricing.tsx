@@ -1,80 +1,10 @@
 import { Check, X } from "lucide-react";
+import { plans } from "../static-data/PricingPlans";
+import { useState } from "react";
 
 const PricingTable = () => {
-  const plans = [
-    {
-      name: "Starter",
-      price: "$99",
-      period: "month",
-      features: {
-        conversations: "500 interactions/month",
-        skus: "250 SKUs",
-        recommendations: "Upselling (complementary product suggestions)",
-        insights: "Weekly customer interaction summary",
-        support: "Email support",
-        stores: "QR setup for 1 store",
-        branding: true,
-        integrations: true,
-        aiCustomization: false,
-        employeeAccess: true,
-      },
-    },
-    {
-      name: "Basic",
-      price: "$199",
-      period: "month",
-      features: {
-        conversations: "2,500 interactions/month",
-        skus: "1,000 SKUs",
-        recommendations: "AI-driven upselling & cross-selling with bundling",
-        insights: "Weekly sales & behavior trends report",
-        support: "Priority email support",
-        stores: "QR setup for up to 3 stores",
-        branding: true,
-        integrations: true,
-        aiCustomization: true,
-        employeeAccess: true,
-      },
-    },
-    {
-      name: "Pro",
-      price: "$399",
-      period: "month",
-      popular: true,
-      features: {
-        conversations: "10,000 interactions/month",
-        skus: "5,000 SKUs",
-        recommendations:
-          "Fully personalized, real-time offers & predictive analytics",
-        insights: "Weekly in-depth analytics & predictive insights",
-        support: "Email, chat & phone support",
-        stores: "QR setup for up to 6 stores",
-        branding: true,
-        integrations: true,
-        aiCustomization: true,
-        employeeAccess: true,
-      },
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      subtitle: "Starting at $999/month",
-      features: {
-        conversations: "Unlimited",
-        skus: "Unlimited",
-        recommendations:
-          "Fully personalized, real-time offers & predictive analytics",
-        insights: "Real-time dashboards & predictive insights",
-        support: "24/7 dedicated account manager & premium support",
-        stores: "QR setup for unlimited stores",
-        branding: "Full branding & UI customization",
-        integrations: true,
-        aiCustomization: true,
-        employeeAccess: true,
-      },
-    },
-  ];
-
+  const [selectedPlan, setSelectedPlan] = useState('$399')
+  
   return (
     <div className="w-full max-w-7xl mx-auto px-4 pt-8 pb-12">
       <h2 className="text-4xl font-bold mb-12 text-center">Pricing</h2>
@@ -82,11 +12,12 @@ const PricingTable = () => {
         {plans.map((plan) => (
           <div
             key={plan.name}
+            onClick={() => setSelectedPlan(plan.price)}
             className={`rounded-xl border ${
-              plan.popular
+              selectedPlan === plan.price
                 ? "border-blue-500 shadow-lg shadow-blue-100"
                 : "border-gray-200"
-            } p-6 relative`}
+            } p-6 relative cursor-pointer flex flex-col`}
           >
             {plan.popular && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
@@ -196,7 +127,7 @@ const PricingTable = () => {
               </div>
 
               <div className="flex items-center space-x-2">
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-gray-900 mb-4">
                   Employee Access & Training
                 </p>
                 {plan.features.employeeAccess ? (
@@ -208,8 +139,8 @@ const PricingTable = () => {
             </div>
 
             <button
-              className={`mt-8 w-full py-2 px-4 rounded-lg font-medium ${
-                plan.popular
+              className={`mt-auto w-full py-2 px-4 rounded-lg font-medium ${
+                selectedPlan === plan.price
                   ? "bg-blue-500 text-white hover:bg-blue-600"
                   : "bg-gray-100 text-gray-900 hover:bg-gray-200"
               } transition-colors duration-200`}

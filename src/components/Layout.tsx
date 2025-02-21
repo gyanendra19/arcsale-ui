@@ -1,15 +1,19 @@
-import { Outlet } from 'react-router-dom'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Layout = () => {
+const Layout = ({
+  setIsModalOpen,
+}: {
+  setIsModalOpen: (isModalOpen: boolean) => void;
+}) => {
   return (
     <>
-    <Navbar />
-    <Outlet />
-    {/* <Footer /> */}
+      <Navbar setIsModalOpen={setIsModalOpen} />
+      <Outlet />
+      <Footer setIsModalOpen={setIsModalOpen} />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
