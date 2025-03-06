@@ -2,11 +2,12 @@ import { Mail, Phone, ArrowUp, Linkedin, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 
-const Footer = ({setIsModalOpen}: {setIsModalOpen : (isModalOpen: boolean) => void }) => {
+const Footer = () => {
     const navigate = useNavigate()
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
 
   return (
     <footer className="bg-gradient-to-r from-blue-500 to-purple-500 relative">
@@ -28,15 +29,15 @@ const Footer = ({setIsModalOpen}: {setIsModalOpen : (isModalOpen: boolean) => vo
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Pricing', 'About Us', 'Contact', "FAQ's"].map((item) => (
+              {['Home', 'Pricing', 'About Us'].map((item) => (
                 <li key={item}>
                   <p onClick={() => {
-                    if(item === 'Contact'){
-                        setIsModalOpen(true)
+                    if(item === 'Home'){
+                      scrollToTop()
                     }else if(item === 'Pricing'){
                         navigate('/pricing')
-                    }else if(item === 'Home'){
-                        navigate('/')
+                    }else if(item === 'About Us'){
+                        navigate('/aboutus')
                     }
                   }} className="text-white/80 cursor-pointer hover:text-white transition-colors text-sm">
                     {item}

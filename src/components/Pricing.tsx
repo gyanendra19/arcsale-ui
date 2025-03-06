@@ -1,10 +1,11 @@
-import { Check, X } from "lucide-react";
+import { Check, Plus, X } from "lucide-react";
 import { plans } from "../static-data/PricingPlans";
 import { useState } from "react";
+import { addOns } from "../static-data/AddOns";
 
 const PricingTable = () => {
-  const [selectedPlan, setSelectedPlan] = useState('$399')
-  
+  const [selectedPlan, setSelectedPlan] = useState("$399");
+
   return (
     <div className="w-full max-w-7xl mx-auto px-4 pt-8 pb-12">
       <h2 className="text-4xl font-bold mb-12 text-center">Pricing</h2>
@@ -149,6 +150,38 @@ const PricingTable = () => {
             </button>
           </div>
         ))}
+      </div>
+
+      {/* Add-ons section */}
+      <div className="rounded-2xl p-8 pt-16">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-gray-900">Add-Ons</h2>
+          <p className="mt-2 text-gray-600">
+            Customize your plan with these additional options
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {addOns.map((addon) => (
+            <div
+              key={addon.name}
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow duration-200"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-3xl">{addon.icon}</div>
+                <div className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                  {addon.availability}
+                </div>
+              </div>
+              <h3 className="font-semibold text-gray-900">{addon.name}</h3>
+              <p className="mt-2 text-sm text-gray-600">{addon.description}</p>
+              <button className="mt-4 w-full flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200">
+                <Plus className="w-4 h-4 mr-2" />
+                Add to Plan
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

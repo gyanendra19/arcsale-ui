@@ -9,6 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 import ReferralModal from "./components/ContactModal";
+import ContactForm from "./components/ContactForm";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,6 +21,8 @@ function App() {
       <Route path="" element={<Layout setIsModalOpen = {setIsModalOpen} />}>
         <Route path="/" element={<Home setIsModalOpen = {setIsModalOpen} />} />
         <Route path="pricing" element={<PricingTable />} />
+        <Route path="contact" element={<ContactForm />} />
+        <Route path="aboutus" element={<AboutUs />} />
       </Route>
     )
   );

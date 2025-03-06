@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaComments, FaQrcode, FaRobot, FaShoppingCart } from "react-icons/fa";
 import { features } from "../static-data/Features";
 import FeatureCard from "../utils/howItWorksBox";
+import { NavLink } from "react-router-dom";
 
 type Item = {
   id: number;
@@ -125,8 +126,9 @@ const Home = ({
 
           {/* Left Section */}
           <div className="flex-1 space-y-4">
-            <h1 className="text-5xl font-bold leading-13">
-              AI-Powered Sales Associate for Brick-and-Mortar Stores
+            <h1 className="text-5xl font-bold">
+              AI-Powered Sales Associate for{" "}
+              <span className="whitespace-nowrap">Brick-and-Mortar</span> Stores
             </h1>
             <p className="text-gray-600 text-xl">
               Raya is a team member that enhances customer experience, drives
@@ -134,9 +136,12 @@ const Home = ({
               recommendations and self-service assistance.
             </p>
             <div className="flex gap-4">
-              <button onClick={() => setIsModalOpen} className="px-6 py-3 font-medium rounded-full bg-gradient-to-bl from-red-200 via-white to-blue-200 text-black cursor-pointer transition-colors">
+              <NavLink
+                to={'/contact'}
+                className="px-6 py-3 font-medium rounded-full bg-gradient-to-bl from-red-200 via-white to-blue-200 text-black cursor-pointer transition-colors"
+              >
                 View Demo
-              </button>
+              </NavLink>
               <button className="px-6 py-3 cursor-pointer font-medium rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition-colors">
                 Learn More
               </button>
@@ -214,16 +219,16 @@ const Home = ({
           src="https://firebasestorage.googleapis.com/v0/b/arcsaleai.appspot.com/o/arcsale%2Fbg-logo%2Fbg-1.webp?alt=media&token=983969d7-1341-42f9-9956-6210915cdfc6"
           alt=""
         />
-        <div className="flex flex-col items-center justify-center py-16 md:px-10 px-4">
+        <div className="flex flex-col items-center justify-center py-24 md:px-10 px-4">
           {/* Heading */}
-          <h2 className="text-3xl font-bold mb-10 text-center">
+          <h2 className="text-4xl font-bold mb-20 text-center">
             Maximize Revenue, Minimize Costs
           </h2>
 
           {/* Main Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
             {/* Left Image */}
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-80">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-90">
               <img src="n4.jpg" className="w-full h-full rounded-xl" alt="" />
             </div>
 
@@ -252,15 +257,15 @@ const Home = ({
         </div>
       </section>
 
-      <section className="my-10 rounded-xl overflow-hidden md:mx-14 relative">
+      <section className="my-14 rounded-xl overflow-hidden md:mx-14 relative">
         <img
           className="absolute inset-0 -z-10 w-full h-full"
           src="https://firebasestorage.googleapis.com/v0/b/arcsaleai.appspot.com/o/arcsale%2Fbg-logo%2Fbg-1.webp?alt=media&token=983969d7-1341-42f9-9956-6210915cdfc6"
           alt=""
         />
-        <div className="flex flex-col items-center justify-center py-16 md:px-10 px-4">
+        <div className="flex flex-col items-center justify-center py-24 md:px-10 px-4">
           {/* Heading */}
-          <h2 className="text-3xl font-bold mb-10 text-center">
+          <h2 className="text-4xl font-bold mb-16 text-center">
             Zero Wait Times. Instant Answers. Smart Shopping.
           </h2>
 
@@ -270,7 +275,7 @@ const Home = ({
 
             {/* Right Section - Three Cards */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
+              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-5">
                 <p className="font-medium text-center mt-2">
                   Customers get real-time product recommendations and store
                   navigation assistance.
@@ -290,22 +295,22 @@ const Home = ({
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-80">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-90">
               <img src="n5.jpg" className="w-full h-full rounded-md" alt="" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="pb-10 w-full">
+      <section className="pb-12 w-full">
         <div className="flex flex-col items-center justify-center md:p-8 p-2">
-          <h2 className="text-3xl font-bold mb-6 text-center">
+          <h2 className="text-4xl font-bold mb-14 text-center">
             Use Cases Across Retail Formats
           </h2>
 
           <div className="w-full max-w-2xl">
             {items.map((item) => (
-              <div key={item.id} className="p-3">
+              <div key={item.id} className="p-6">
                 <button
                   onClick={() => toggleItem(item.id)}
                   className="flex items-center border px-6 py-3 cursor-pointer border-gray-300 rounded-3xl justify-between w-full"
