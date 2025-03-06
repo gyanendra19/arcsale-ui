@@ -38,7 +38,12 @@ const ContactForm = () => {
 
     // Validate message field
     const newErrors = { message: "" };
-    if (!formData.message.trim()) {
+    if (
+      !formData.message.trim() ||
+      !formData.email.trim() ||
+      !formData.name.trim() ||
+      !formData.phone.trim()
+    ) {
       newErrors.message = "This field is required";
     }
 
@@ -53,16 +58,14 @@ const ContactForm = () => {
 
   return (
     <main>
-      <h1 className="text-5xl font-bold mb-8 text-center">
-        Contact us
-      </h1>
+      <h1 className="text-5xl font-bold mb-8 text-center">Contact us</h1>
       <div className="flex justify-between w-[85%] py-12 mx-auto">
         <div className="w-full max-w-lg bg-gradient-to-bl from-red-100 via-white to-blue-100 rounded-xl shadow-md p-8">
           <form onSubmit={handleSubmit} className="space-y-5 mt-8">
             <div>
               <label
                 htmlFor="name"
-                className="block text-purple-700 mb-2 text-sm"
+                className="block text-purple-700 text-sm"
               >
                 Name
               </label>
@@ -75,11 +78,14 @@ const ContactForm = () => {
                 className="w-full p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
               />
             </div>
+            {errors.message && (
+              <p className="text-red-500 text-xs">{errors.message}</p>
+            )}
 
             <div>
               <label
                 htmlFor="phone"
-                className="block text-purple-700 mb-2 text-sm"
+                className="block text-purple-700 text-sm"
               >
                 Phone
               </label>
@@ -92,11 +98,14 @@ const ContactForm = () => {
                 className="w-full p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
               />
             </div>
+            {errors.message && (
+              <p className="text-red-500 text-xs">{errors.message}</p>
+            )}
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-purple-700 mb-2 text-sm"
+                className="block text-purple-700 text-sm"
               >
                 Email
               </label>
@@ -109,11 +118,14 @@ const ContactForm = () => {
                 className="w-full p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
               />
             </div>
+            {errors.message && (
+              <p className="text-red-500 text-xs">{errors.message}</p>
+            )}
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-purple-700 mb-2 text-sm"
+                className="block text-purple-700 text-sm"
               >
                 Message
               </label>
@@ -126,13 +138,9 @@ const ContactForm = () => {
                 className="w-full p-3 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-300"
               ></textarea>
               {errors.message && (
-                <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                <p className="text-red-500 text-xs">{errors.message}</p>
               )}
             </div>
-
-            {errors.message && (
-              <p className="text-red-500 text-xs">This field is required</p>
-            )}
 
             <button
               type="submit"
@@ -144,9 +152,7 @@ const ContactForm = () => {
         </div>
 
         <div className="mt-12 max-w-lg text-center">
-          <h2 className="text-3xl font-bold mb-2">
-            We're here to help
-          </h2>
+          <h2 className="text-3xl font-bold mb-2">We're here to help</h2>
           <p className="text-gray-700">
             Our team is ready to assist you seven days a week, no matter the
             issue.

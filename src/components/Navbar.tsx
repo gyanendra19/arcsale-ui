@@ -6,8 +6,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scrollToBottom = () => {
-    window.scrollTo({ top: window.outerHeight, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+};
 
   return (
     <nav className="w-full md:px-10 md:py-6 flex justify-between items-center">
