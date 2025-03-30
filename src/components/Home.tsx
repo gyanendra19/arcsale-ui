@@ -125,12 +125,12 @@ const Home = ({
           <div className="absolute hidden md:block w-80 h-80 bg-gradient-to-bl from-red-200 via-white to-blue-200 rounded-full -left-64 top-10 translate-y-1/2"></div>
 
           {/* Left Section */}
-          <div className="flex-1 space-y-4">
-            <h1 className="text-5xl font-bold">
+          <div className="flex-1 w-full space-y-4">
+            <h1 className="md:text-5xl text-3xl font-bold">
               AI-Powered Sales Associate for{" "}
               <span className="whitespace-nowrap">Brick-and-Mortar</span> Stores
             </h1>
-            <p className="text-gray-600 text-xl">
+            <p className="text-gray-600 w-full md:text-xl">
               Raya is a team member that enhances customer experience, drives
               sales, and reduces human dependency with AI-powered product
               recommendations and self-service assistance.
@@ -199,10 +199,10 @@ const Home = ({
 
       <section className="my-4 rounded-xl overflow-hidden relative">
         <div className="flex flex-col items-center p-8">
-          <h2 className="text-4xl font-bold py-8">How It Works</h2>
+          <h2 className="md:text-4xl text-3xl text-center font-bold py-8">How It Works</h2>
 
           <div className="w-full flex justify-center mb-8">
-            <div className="md:w-[40%] w-full h-86 bg-gray-300 flex items-center justify-center rounded-xl">
+            <div className="md:w-[40%] w-full md:h-86 bg-gray-300 flex items-center justify-center rounded-xl">
               <img src="n6.jpg" className="w-full h-full rounded-md" alt="" />
             </div>
           </div>
@@ -228,20 +228,20 @@ const Home = ({
           {/* Main Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
             {/* Left Image */}
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-90">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center md:h-90">
               <img src="n4.jpg" className="w-full h-full rounded-xl" alt="" />
             </div>
 
             {/* Right Section - Three Cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="text-md font-medium text-center mt-2">
+                <p className="md:text-md text-sm font-medium text-center mt-2">
                   Reduce reliance on sales associates while maintaining
                   excellent customer service.
                 </p>
               </div>
               <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="text-md font-medium mt-2 text-center">
+                <p className="md:text-md text-sm font-medium mt-2 text-center">
                   Boost AOV (Average Order Value) with AI-powered personalized
                   recommendations.
                 </p>
@@ -265,7 +265,7 @@ const Home = ({
         />
         <div className="flex flex-col items-center justify-center py-24 md:px-10 px-4">
           {/* Heading */}
-          <h2 className="text-4xl font-bold mb-16 text-center">
+          <h2 className="text-4xl font-bold md:mb-16 mb-10 text-center">
             Zero Wait Times. Instant Answers. Smart Shopping.
           </h2>
 
@@ -276,13 +276,13 @@ const Home = ({
             {/* Right Section - Three Cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-5">
-                <p className="font-medium text-center mt-2">
+                <p className="font-medium text-sm md:text-md text-center mt-2">
                   Customers get real-time product recommendations and store
                   navigation assistance.
                 </p>
               </div>
               <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="font-medium mt-2 text-center">
+                <p className="font-medium text-sm md:text-md mt-2 text-center">
                   Reduce frustration caused by unavailable staff or long
                   checkout lines.
                 </p>
@@ -295,7 +295,7 @@ const Home = ({
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center h-90">
+            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl flex items-center justify-center md:h-90">
               <img src="n5.jpg" className="w-full h-full rounded-md" alt="" />
             </div>
           </div>
@@ -304,21 +304,21 @@ const Home = ({
 
       <section className="pb-12 w-full">
         <div className="flex flex-col items-center justify-center md:p-8 p-2">
-          <h2 className="text-4xl font-bold mb-14 text-center">
+          <h2 className="text-4xl font-bold mb-6 md:mb-14 text-center">
             Use Cases Across Retail Formats
           </h2>
 
           <div className="w-full max-w-2xl">
             {items.map((item) => (
-              <div key={item.id} className="p-6">
+              <div key={item.id} className="md:p-6 p-2">
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="flex items-center border px-6 py-3 cursor-pointer border-gray-300 rounded-3xl justify-between w-full"
+                  className="flex items-center border px-3 md:px-6 py-3 cursor-pointer border-gray-300 rounded-3xl justify-between w-full"
                 >
                   {/* Left side with icon and text */}
                   <div className="flex items-center space-x-4">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span className="font-medium">{item.title}</span>
+                    <span className="font-medium md:px-0 px-1 md:text-md text-sm">{item.title}</span>
                   </div>
 
                   {/* Plus/Minus Icon */}
