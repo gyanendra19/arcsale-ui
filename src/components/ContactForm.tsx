@@ -58,7 +58,7 @@ const ContactForm = () => {
 
   return (
     <main>
-      <h1 className="text-5xl font-bold mb-8 text-center">Contact us</h1>
+      <h1 className="text-5xl font-bold mt-6 md:mb-8 text-center">Contact us</h1>
       <div className="flex md:flex-row flex-col justify-between w-full md:w-[85%] py-12 mx-auto">
         <div className="w-full max-w-lg bg-gradient-to-bl from-red-100 via-white to-blue-100 rounded-xl shadow-md p-8">
           <form onSubmit={handleSubmit} className="space-y-5 mt-8">

@@ -15,9 +15,9 @@ const Navbar = () => {
   return (
     <nav className="w-full md:px-10 md:py-6 flex justify-between items-center">
       <div className="flex items-center text-2xl gap-2 font-semibold">
-        <img src="arcsale-logo.png" className="h-10" alt="" />
-        <NavLink to={"/"} className="ml-1 font-bold md:block hidden">
-          Arcsale AI
+        <NavLink to={"/"} className="ml-1 font-bold items-center gap-3 flex">
+          <img src="arcsale-logo.png" className="h-10" alt="" />
+          <p className="md:block hidden"> Arcsale AI</p>
         </NavLink>
       </div>
       <div className="hidden md:flex gap-5 items-center">
@@ -44,7 +44,7 @@ const Navbar = () => {
       {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
-          className="absolute right-6 z-50"
+          className="absolute top-6 right-6 z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Menu size={24} />
