@@ -1,5 +1,4 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 const ContactModal = ({
@@ -12,7 +11,6 @@ const ContactModal = ({
     console.log(isOpen, 'is');
     
   if (!isOpen) return null;
-  const [loading, setLoading] = useState(false);
   const {
     register,
     trigger,
