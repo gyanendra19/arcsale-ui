@@ -21,21 +21,21 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className="hidden md:flex gap-5 items-center">
-        <NavLink to="/aboutus" className="hover:text-gray-500 font-medium">
+        <NavLink to="/aboutus" className="hover:text-gray-500 text-lg font-medium">
           About
         </NavLink>
-        <NavLink to="/pricing" className="hover:text-gray-500 font-medium">
+        <NavLink to="/pricing" className="hover:text-gray-500 font-medium text-lg">
           Pricing
         </NavLink>
         <NavLink
           to={"/contact"}
-          className="px-4 md:py-2 py-1 text-sm rounded-full bg-black text-white cursor-pointer font-medium transition-colors"
+          className="px-6 md:py-2 py-1 text-lg rounded-full bg-black text-white cursor-pointer font-medium transition-colors"
         >
           View demo
         </NavLink>
         <button
           onClick={() => scrollToBottom()}
-          className="px-4 cursor-pointer md:py-2 font-medium py-1 text-sm rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
+          className="px-6 cursor-pointer md:py-2 font-medium py-1 text-lg rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
         >
           Contact Us
         </button>

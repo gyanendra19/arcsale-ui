@@ -234,20 +234,20 @@ const Home = ({
 
             {/* Right Section - Three Cards */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="md:text-md text-sm font-medium text-center mt-2">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
+                <p className="md:text-md text-md font-medium text-center my-auto">
                   Reduce reliance on sales associates while maintaining
                   excellent customer service.
                 </p>
               </div>
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="md:text-md text-sm font-medium mt-2 text-center">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
+                <p className="md:text-md text-md font-medium my-auto text-center">
                   Boost AOV (Average Order Value) with AI-powered personalized
                   recommendations.
                 </p>
               </div>
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-6 col-span-2">
-                <p className="text-md font-medium mt-2 text-center">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-6 col-span-2">
+                <p className="text-md font-medium my-auto text-center">
                   There are no expensive kiosks or tablets—just a simple
                   QR-based AI assistant.{" "}
                 </p>
@@ -275,20 +275,20 @@ const Home = ({
 
             {/* Right Section - Three Cards */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-5">
-                <p className="font-medium text-sm md:text-md text-center mt-2">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-5">
+                <p className="font-medium text-md md:text-md text-center my-auto">
                   Customers get real-time product recommendations and store
                   navigation assistance.
                 </p>
               </div>
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
-                <p className="font-medium text-sm md:text-md mt-2 text-center">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-3 md:p-6">
+                <p className="font-medium text-md md:text-md my-auto text-center">
                   Reduce frustration caused by unavailable staff or long
                   checkout lines.
                 </p>
               </div>
-              <div className="bg-white/10 md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-6 col-span-2">
-                <p className="font-medium mt-2 text-center">
+              <div className="bg-white/10 flex md:backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-6 col-span-2">
+                <p className="font-medium my-auto text-center">
                   Enable self-checkout integration for a frictionless shopping
                   experience.
                 </p>
@@ -313,12 +313,12 @@ const Home = ({
               <div key={item.id} className="md:p-6 p-2">
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="flex items-center border px-3 md:px-6 py-3 cursor-pointer border-gray-300 rounded-3xl justify-between w-full"
+                  className="flex items-center border px-3 md:px-6 py-6 cursor-pointer border-gray-300 rounded-3xl justify-between w-full"
                 >
                   {/* Left side with icon and text */}
                   <div className="flex items-center space-x-4">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <span className="font-medium md:px-0 px-1 md:text-md text-sm">{item.title}</span>
+                    <span className="font-medium md:px-0 px-1 md:text-lg text-sm">{item.title}</span>
                   </div>
 
                   {/* Plus/Minus Icon */}
